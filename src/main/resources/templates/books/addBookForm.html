@@ -1,0 +1,102 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<!--  xmlns:th="http://www.w3.org/1999/xhtml"></html> -->
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+    <div th:replace="fragments/header :: header-css"></div>
+    <!--<meta http-equiv="refresh" content="0; url=/books" />-->
+    <style>
+        .formStyle {
+            /*background-color: powderblue;*/
+            margin: 10px;
+        }
+
+        .submitButton {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+<!--<form action="saveBook"  modelAtribute="book" method="post" >th:object="${/booksList}"th:action="@{/books}" " th:action="books " th:object="${addedBook}" -->
+<form action="#" th:object="${saveBook}" th:method="post" th:action="@{/saveBook}">
+    <fieldset>
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="name" class="col-sm-2 col-form-label">Name:</label> <!--th:text="#{book.name}"-->
+
+            <div class="col-sm-4">
+                <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Name">
+                <!--th:field="*{name}"-->
+            </div>
+        </div>
+
+        <!--<div class="mx-auto formStyle form-group row" style="width:10px">-->
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="author" class="col-sm-2 col-form-label">Author:</label>
+
+            <div class="col-sm-4">
+                <input th:field="*{author}" type="text" class="form-control" id="author" th:placeholder="author">
+                <!--th:field="${addedBook.author}"-->
+            </div>
+        </div>
+
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="publisher" class="col-sm-2 col-form-label">Publisher:</label>
+
+            <div class="col-sm-4">
+                <input th:field="*{publisher}" type="text" class="form-control" id="publisher"
+                       th:placeholder="publisher">
+            </div>
+        </div>
+
+        <!--<div class="mx-auto formStyle form-group row" style="width:10px">-->
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="quantity" class="col-sm-2 col-form-label">Quantity:</label>
+
+            <div class="col-sm-4">
+                <input th:field="*{quantity}" type="text" class="form-control" id="quantity" th:placeholder="quantity">
+            </div>
+        </div>
+
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="issued" class="col-sm-2 col-form-label">Issued:</label>
+
+            <div class="col-sm-4">
+                <input th:field="*{issued}" type="text" class="form-control" id="issued" th:placeholder="issued">
+            </div>
+        </div>
+
+        <div class="mx-auto formStyle form-group row">
+
+            <label for="date" class="col-sm-2 col-form-label">Date:</label>
+
+            <div class="col-sm-4">
+                <input th:field="*{addedDate}" type="text" class="form-control" id="date" th:placeholder="'dd/mm/YYYY'">
+            </div>
+        </div>
+
+
+        <!--<div class="mx-auto formStyle form-group row">-->
+
+            <!--<label for="userID" class="col-sm-2 col-form-label">UserID:</label>-->
+
+            <!--<div class="col-sm-4">-->
+                <!--<input th:field="*{userID}" type="text" class="form-control" id="userID" th:placeholder="userID">-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="col-sm-6  submitButton">
+            <!--<a th:href="@{/books}" class="btn btn-primary " role="button" type="submit">Save</a>-->
+            <input th:type="submit" th:value="Save" th:class="save">
+        </div>
+    </fieldset>
+</form>
+
+</body>

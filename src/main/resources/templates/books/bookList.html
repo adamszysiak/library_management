@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+    <div th:replace="fragments/header :: header-css">
+        <style>
+            .addBookButton {
+                padding-bottom: 100px;
+            }
+        </style>
+
+    </div>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Quantity</th>
+        <th>Issued</th>
+        <th>Added date</th>
+    </tr>
+
+    <tr th:each="book : ${books}">
+        <td><p th:text="${book.name}"/></td>
+        <td><p th:text="${book.author}"/></td>
+        <td><p th:text="${book.quantity}"/></td>
+        <td><p th:text="${book.issued}"/></td>
+        <td><p th:text="${book.addedDate}"/></td>
+    </tr>
+</table>
+<div class="mx-auto" style="width: 0px;">
+    <a th:href="@{books/bookForm}" class=" addBookButton btn btn-primary " role="button">Add book</a>
+</div>
+</body>
