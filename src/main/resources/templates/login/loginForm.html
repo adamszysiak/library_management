@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<!--  xmlns:th="http://www.w3.org/1999/xhtml"></html> -->
+<head>
+    <meta charset="UTF-8">
+    <title>Book list</title>
+    <div th:replace="fragments/header :: header-css"></div>
+    <!--<meta http-equiv="refresh" content="0; url=/books" />-->
+    <style>
+        .formStyle {
+            /*background-color: powderblue;*/
+            margin: 10px;
+        }
+
+        .submitButton {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<div th:replace="fragments/header :: header"></div>
+
+<form action="#" th:object="${saveBook}" th:method="post" th:action="@{/saveBook}">
+
+</form>

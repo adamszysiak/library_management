@@ -12,6 +12,9 @@ public class UserEntity
     @Column(name = "ID")
     private Long id;
 
+    @Column(name = "LOGIN")
+    private String login;
+
     @Column(name = "PASSWORD")
     private String password;
 
@@ -35,6 +38,16 @@ public class UserEntity
     public void setId(Long id)
     {
         this.id = id;
+    }
+
+    public String getLogin()
+    {
+        return login;
+    }
+
+    public void setLogin(String login)
+    {
+        this.login = login;
     }
 
     public String getPassword()
