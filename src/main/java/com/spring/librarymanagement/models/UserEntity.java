@@ -9,7 +9,6 @@ public class UserEntity
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 //    @ManyToOne(fetch = FetchType.LAZY,targetEntity = BookEntity.class)
-    //GOWNO
 
     @Column(name = "ID")
     private Long id;
